@@ -9,10 +9,6 @@ namespace LightLib.Models
     {
         public int Id { get; set; }
 
-        public Asset Asset { get; set; }
-        public int AssetId { get; set; }
-
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public IEnumerable<Asset> Assets { get; set; }
     }
 }

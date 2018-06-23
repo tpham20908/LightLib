@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201806231421065_PopulateAssetType.Designer.cs">
       <DependentUpon>201806231421065_PopulateAssetType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806231715241_RecorrectCheckoutClass.cs" />
+    <Compile Include="Migrations\201806231715241_RecorrectCheckoutClass.Designer.cs">
+      <DependentUpon>201806231715241_RecorrectCheckoutClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Asset.cs" />
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806231421065_PopulateAssetType.resx">
       <DependentUpon>201806231421065_PopulateAssetType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231715241_RecorrectCheckoutClass.resx">
+      <DependentUpon>201806231715241_RecorrectCheckoutClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
