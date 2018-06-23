@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201806231715241_RecorrectCheckoutClass.Designer.cs">
       <DependentUpon>201806231715241_RecorrectCheckoutClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806231902441_accountInformation.cs" />
+    <Compile Include="Migrations\201806231902441_accountInformation.Designer.cs">
+      <DependentUpon>201806231902441_accountInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Asset.cs" />
@@ -318,6 +322,9 @@
     <EmbeddedResource Include="Migrations\201806231715241_RecorrectCheckoutClass.resx">
       <DependentUpon>201806231715241_RecorrectCheckoutClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806231902441_accountInformation.resx">
+      <DependentUpon>201806231902441_accountInformation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -333,7 +340,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52271</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

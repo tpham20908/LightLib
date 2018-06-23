@@ -79,6 +79,33 @@ namespace LightLib.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //Custom fields
+        [Required][Display(Name ="First name")]
+        [MaxLength(50, ErrorMessage = "Maximum length is 50 characters")]
+        public string FirstName { get; set; }
+
+        [Required][Display(Name ="First name")][MaxLength(50, ErrorMessage = "Maximum length is 50 characters")]
+        public string LastName { get; set; }
+
+        [Required][Display(Name ="Phone number")][MaxLength(20, ErrorMessage = "Maximum length is 20 characters")]
+        public string Phone { get; set; }
+
+        [Required][Display(Name ="Address")][MaxLength(50, ErrorMessage = "Maximum length is 50 characters")]
+        public string Address { get; set; }
+
+        [Required][Display(Name ="City")][MaxLength(50, ErrorMessage = "Maximum length is 50 characters")]
+        public string City { get; set; }
+
+        [Required][Display(Name ="Province")][MaxLength(25, ErrorMessage = "Maximum length is 25 characters")]
+        public string Province { get; set; }
+
+        [Required][Display(Name ="Postal code")]
+        [   
+        MaxLength(7, ErrorMessage = "Maximum length is 7 characters"),
+        MinLength(5, ErrorMessage = "Minimum length is 5 characters")
+        ]
+        public string Zip { get; set; }
     }
 
     public class ResetPasswordViewModel
