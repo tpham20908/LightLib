@@ -25,7 +25,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Users", "Index", "Users")</li>
+                    <li>@Html.ActionLink("Users", "Index", "ApplicationUsers")</li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Assets</a>
                     <ul class="dropdown-menu" role="menu" >
                         <li role="presentation">@Html.ActionLink("Book", "Book", "Assets") </li>
@@ -36,7 +36,7 @@
                         <li role="presentation">@Html.ActionLink("Music", "Music", "Assets") </li>
                     </ul>
                     </li>
-                    <li>@Html.ActionLink("New User", "NewUser", "Users")</li>
+                    <li>@Html.ActionLink("New User", "Create", "ApplicationUsers")</li>
                     <li>@Html.ActionLink("New Asset", "Create", "Assets")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
