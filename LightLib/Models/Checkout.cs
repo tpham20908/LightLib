@@ -11,8 +11,6 @@ namespace LightLib.Models
 
         public List <Asset> Assets { get; set; }
 
-        public ApplicationUser AppUser { get; set; }
-        
         public DateTime DateCheckedOut { get; set; }
     }
 }

@@ -14,6 +14,5 @@ namespace LightLib.Models
         public string Author { get; set; }
         public int ReleasedYear { get; set; }
         public string ImageUrl { get; set; }
-        public Checkout Checkout { get; set; }
     }
 }
