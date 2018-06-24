@@ -28,11 +28,11 @@
                     <li>@Html.ActionLink("Users", "Index", "ApplicationUsers")</li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Assets</a>
                     <ul class="dropdown-menu" role="menu" >
-                        <li role="presentation">@Html.ActionLink("Book", "Book", "Assets") </li>
-                        <li role="presentation">@Html.ActionLink("Magazine", "Magazine", "Assets") </li>
-                        <li role="presentation">@Html.ActionLink("Movie", "Movie", "Assets") </li>
+                        <li role="presentation">@Html.ActionLink("Books", "Book", "Assets") </li>
+                        <li role="presentation">@Html.ActionLink("Magazines", "Magazine", "Assets") </li>
+                        <li role="presentation">@Html.ActionLink("Movies", "Movie", "Assets") </li>
                         <li role="presentation">@Html.ActionLink("Documentation", "Documentation", "Assets") </li>
-                        <li role="presentation">@Html.ActionLink("Game", "Game", "Assets") </li>
+                        <li role="presentation">@Html.ActionLink("Games", "Game", "Assets") </li>
                         <li role="presentation">@Html.ActionLink("Music", "Music", "Assets") </li>
                     </ul>
                     </li>
@@ -45,7 +45,7 @@
     </div>
     <br />
     <br />
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top:33px">
         @RenderBody()
         <hr />
         <footer>

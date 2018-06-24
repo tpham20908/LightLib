@@ -160,7 +160,7 @@ namespace LightLib.Controllers
                     FirstName=model.FirstName,
                     LastName=model.LastName,
                     Phone=model.Phone,
-                    Address=model.Phone,
+                    Address=model.Address,
                     City = model.City,
                     Province = model.Province,
                     Zip = model.Zip

@@ -1,0 +1,43 @@
+﻿@model LightLib.Models.Asset
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*Breadcrumbs*@
+<p>
+    @Html.ActionLink("Home", "Index", "Home") >
+    @Html.ActionLink("Assets", "Index", "Asset") >
+    @Html.ActionLink(Model.Type.Name, "Index", "Asset")
+</p>
+ <hr />
+
+
+ <div style="margin:0 auto; width: 600px; text-align:center;">
+
+
+     <h3>
+         <b>
+             @Model.Title
+         </b>
+     </h3>
+     <p>
+         <img src="@Model.ImageUrl" style="height:300px;" title="@Model.Title" alt="@Model.Title" /><br /><br />
+     </p>
+     <p>Author: @Model.Author</p>
+     <p>Released year: @Model.ReleasedYear</p>
+     <div>
+         @using (Html.BeginForm())
+         {
+             @Html.AntiForgeryToken()
+             <div class="form-group">
+                 <div>
+                     <input type="submit" value="Add to checkout" class="btn btn-primary" />
+                 </div>
+             </div>
+          }
+     </div>
+</div>
+<br /><br />
+<hr />
+<p> @Html.ActionLink("<< Go to previous page", null, null, null, new { href = Request.UrlReferrer })</p>
