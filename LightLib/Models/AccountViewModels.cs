@@ -106,6 +106,8 @@ namespace LightLib.Models
         MinLength(5, ErrorMessage = "Minimum length is 5 characters")
         ]
         public string Zip { get; set; }
+
+        public List<Checkout> Checkouts { get; set; }
     }
 
     public class ResetPasswordViewModel
