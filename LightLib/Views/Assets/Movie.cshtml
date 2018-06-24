@@ -19,7 +19,8 @@
             @Html.DisplayNameFor(model => model.ReleasedYear)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
+            Image
+            @*@Html.DisplayNameFor(model => model.ImageUrl)*@
         </th>
         <th></th>
     </tr>
@@ -34,7 +35,8 @@
             @Html.DisplayFor(modelItem => item.ReleasedYear)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageUrl)
+            <img src="@item.ImageUrl" class="imgAssetIndex" />
+            @*@Html.DisplayFor(modelItem => item.ImageUrl)*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

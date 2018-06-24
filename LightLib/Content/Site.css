@@ -4,3 +4,8 @@
 a img:hover {
     transform: scale(1.05);
 }
+
+.imgAssetIndex {
+    height: 120px;
+    width: 108px;
+}
