@@ -43,11 +43,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
+            Image
+            @*@Html.DisplayNameFor(model => model.ImageUrl)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            <img src="@Model.ImageUrl" />
+            @*@Html.DisplayFor(model => model.ImageUrl)*@
         </dd>
 
     </dl>
