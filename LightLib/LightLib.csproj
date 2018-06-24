@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
     <Compile Include="Controllers\AssetTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -234,6 +235,10 @@
     <Compile Include="Migrations\201806241400423_usingSystemUser.cs" />
     <Compile Include="Migrations\201806241400423_usingSystemUser.Designer.cs">
       <DependentUpon>201806241400423_usingSystemUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241435070_CheckoutToAssetAddedAndDate.cs" />
+    <Compile Include="Migrations\201806241435070_CheckoutToAssetAddedAndDate.Designer.cs">
+      <DependentUpon>201806241435070_CheckoutToAssetAddedAndDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,6 +326,11 @@
     <Content Include="Views\Assets\Documentation.cshtml" />
     <Content Include="Views\Assets\Game.cshtml" />
     <Content Include="Views\Assets\Music.cshtml" />
+    <Content Include="Views\ApplicationUsers\Create.cshtml" />
+    <Content Include="Views\ApplicationUsers\Delete.cshtml" />
+    <Content Include="Views\ApplicationUsers\Details.cshtml" />
+    <Content Include="Views\ApplicationUsers\Edit.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -362,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806241400423_usingSystemUser.resx">
       <DependentUpon>201806241400423_usingSystemUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241435070_CheckoutToAssetAddedAndDate.resx">
+      <DependentUpon>201806241435070_CheckoutToAssetAddedAndDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

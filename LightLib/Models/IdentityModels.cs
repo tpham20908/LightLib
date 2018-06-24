@@ -41,5 +41,7 @@ namespace LightLib.Models
         {
             return new ApplicationDbContext();
         }
+
+        //public System.Data.Entity.DbSet<LightLib.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
