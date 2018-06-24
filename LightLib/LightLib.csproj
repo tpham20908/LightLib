@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssetsController.cs" />
+    <Compile Include="Controllers\AssetTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,6 +222,14 @@
     <Compile Include="Migrations\201806231902441_accountInformation.cs" />
     <Compile Include="Migrations\201806231902441_accountInformation.Designer.cs">
       <DependentUpon>201806231902441_accountInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806232316335_addAssetTypeId.cs" />
+    <Compile Include="Migrations\201806232316335_addAssetTypeId.Designer.cs">
+      <DependentUpon>201806232316335_addAssetTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806240128249_AddAuthorOnAsset.cs" />
+    <Compile Include="Migrations\201806240128249_AddAuthorOnAsset.Designer.cs">
+      <DependentUpon>201806240128249_AddAuthorOnAsset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,6 +302,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AssetTypes\Create.cshtml" />
+    <Content Include="Views\AssetTypes\Delete.cshtml" />
+    <Content Include="Views\AssetTypes\Details.cshtml" />
+    <Content Include="Views\AssetTypes\Edit.cshtml" />
+    <Content Include="Views\AssetTypes\Index.cshtml" />
+    <Content Include="Views\Assets\Create.cshtml" />
+    <Content Include="Views\Assets\Delete.cshtml" />
+    <Content Include="Views\Assets\Details.cshtml" />
+    <Content Include="Views\Assets\Edit.cshtml" />
+    <Content Include="Views\Assets\Index.cshtml" />
+    <Content Include="Views\Assets\Book.cshtml" />
+    <Content Include="Views\Assets\Magazine.cshtml" />
+    <Content Include="Views\Assets\Movie.cshtml" />
+    <Content Include="Views\Assets\Documentation.cshtml" />
+    <Content Include="Views\Assets\Game.cshtml" />
+    <Content Include="Views\Assets\Music.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -324,6 +350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806231902441_accountInformation.resx">
       <DependentUpon>201806231902441_accountInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806232316335_addAssetTypeId.resx">
+      <DependentUpon>201806232316335_addAssetTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240128249_AddAuthorOnAsset.resx">
+      <DependentUpon>201806240128249_AddAuthorOnAsset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
