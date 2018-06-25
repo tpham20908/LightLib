@@ -31,6 +31,7 @@ namespace LightLib.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Asset asset = db.Assets.Find(id);
+            
             if (asset == null)
             {
                 return HttpNotFound();

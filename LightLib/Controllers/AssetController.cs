@@ -15,10 +15,22 @@ namespace LightLib.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Asset
-        public ActionResult Index()
+        public ActionResult Index(int? assetTypeid)
         {
-            var assets = db.Assets.Include(a => a.Type).OrderBy(a=>a.Type.Id);
-            return View(assets.ToList());
+            if (assetTypeid == null)
+            {
+                ViewBag.Myheader = "Assets";
+                var assets = db.Assets.Include(a => a.Type).OrderBy(a => a.Type.Id);
+                return View(assets.ToList());
+            }
+            else
+            {
+
+                ViewBag.Myheader = db.AssetTypes.Find(assetTypeid).Name;
+
+                var assets = db.Assets.Include(a => a.Type).Where(a => a.AssetTypeId == assetTypeid).OrderBy(a => a.Type.Id);
+                return View(assets.ToList());
+            }
         }
         // GET: Asset
         public ActionResult IndexList()
@@ -134,5 +146,7 @@ namespace LightLib.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

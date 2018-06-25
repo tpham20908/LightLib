@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<LightLib.Models.Asset>
+@using LightLib.Models   
 
 @{
     ViewBag.Title = "Index";
@@ -11,44 +12,55 @@
 </p>
 <hr />
 
-<h2>Latest entries</h2>
 
-<div style="display:inline-block; margin:0 auto ">
-    @foreach (var a in Model)
-    {
+<div>
+    <table>
+        <tr>
+            <td>@Html.ActionLink("Books", "Index", "Asset", new { assetTypeid = 1 }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Magazine", "Index", "Asset", new { assetTypeid = 2 }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Movies", "Index", "Asset", new { assetTypeid = 3 }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Documentation", "Index", "Asset", new { assetTypeid = 4 }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Games", "Index", "Asset", new { assetTypeid = 5 }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Music", "Index", "Asset", new { assetTypeid = 6 }, new { @class = "btn btn-primary" })</td>
+        </tr>
 
-        <div class="asset-item" >
-            <a href="~/Asset/Details/@a.Id">
-                <div>
-                    <div style="text-align:center">
-                        <h4>
-                            @if (a.Title.Length <= 34)
-                            {
-                                @a.Title
-                            }
-                            else
-                            {
-                                @a.Title.Substring(0, 34)<span>...</span>
-                            }
-                        </h4>
-                    </div>
-                    <div style="text-align:center">
-                        <img src=@a.ImageUrl style="height:230px;" title="@a.Title" alt="@a.Title" /><br /><br />
-                    </div>
-                </div>
-            </a>
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                <div class="form-group">
-                    <div>
-                        <input type="submit" value="Add to checkout" class="btn btn-primary" />
-                    </div>
-                </div>
-            }
-        </div>
-    }
+    </table>
 </div>
+<h2>@ViewBag.Myheader</h2>
+    <div style="display:inline-block; margin:0 auto ">
+        @foreach (var a in Model)
+        {
 
-
+            <div class="asset-item">
+                <a href="~/Asset/Details/@a.Id">
+                    <div>
+                        <div style="text-align:center">
+                            <h4>
+                                @if (a.Title.Length <= 34)
+                                {
+                                    @a.Title
+                                }
+                                else
+                                {
+                                    @a.Title.Substring(0, 34)<span>...</span>
+                                }
+                            </h4>
+                        </div>
+                        <div style="text-align:center">
+                            <img src=@a.ImageUrl style="height:230px;" title="@a.Title" alt="@a.Title" /><br /><br />
+                        </div>
+                    </div>
+                </a>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div>
+                            <input type="submit" value="Add to checkout" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
 

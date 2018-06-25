@@ -378,6 +378,7 @@
     <Content Include="Views\LibraryUsers\Edit.cshtml" />
     <Content Include="Views\LibraryUsers\Index.cshtml" />
     <Content Include="Views\LibraryUsers\Rent.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
