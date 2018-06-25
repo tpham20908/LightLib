@@ -9,8 +9,6 @@ namespace LightLib.Models
     {
         public int Id { get; set; }
 
-        public LibraryUser LibraryUser { get; set; }
-
         public List<Asset> Assets { get; set; }
 
         public DateTime DateCheckedOut { get; set; }
