@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AssetsController.cs" />
     <Compile Include="Controllers\AssetTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibraryUsersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,12 +246,25 @@
     <Compile Include="Migrations\201806241516170_removedSomeProperties.Designer.cs">
       <DependentUpon>201806241516170_removedSomeProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806251111458_AddLibraryUserClass.cs" />
+    <Compile Include="Migrations\201806251111458_AddLibraryUserClass.Designer.cs">
+      <DependentUpon>201806251111458_AddLibraryUserClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251116438_PopulateLibraryUsers.cs" />
+    <Compile Include="Migrations\201806251116438_PopulateLibraryUsers.Designer.cs">
+      <DependentUpon>201806251116438_PopulateLibraryUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251119102_PopulateLibraryUsers2.cs" />
+    <Compile Include="Migrations\201806251119102_PopulateLibraryUsers2.Designer.cs">
+      <DependentUpon>201806251119102_PopulateLibraryUsers2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\AssetType.cs" />
     <Compile Include="Models\Checkout.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LibraryUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -345,6 +359,11 @@
     <Content Include="Views\Asset\Index.cshtml" />
     <Content Include="Views\Asset\IndexList.cshtml" />
     <Content Include="Views\Asset\DetailsList.cshtml" />
+    <Content Include="Views\LibraryUsers\Create.cshtml" />
+    <Content Include="Views\LibraryUsers\Delete.cshtml" />
+    <Content Include="Views\LibraryUsers\Details.cshtml" />
+    <Content Include="Views\LibraryUsers\Edit.cshtml" />
+    <Content Include="Views\LibraryUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -392,6 +411,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806241516170_removedSomeProperties.resx">
       <DependentUpon>201806241516170_removedSomeProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251111458_AddLibraryUserClass.resx">
+      <DependentUpon>201806251111458_AddLibraryUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251116438_PopulateLibraryUsers.resx">
+      <DependentUpon>201806251116438_PopulateLibraryUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251119102_PopulateLibraryUsers2.resx">
+      <DependentUpon>201806251119102_PopulateLibraryUsers2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

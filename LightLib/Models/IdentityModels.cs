@@ -33,6 +33,7 @@ namespace LightLib.Models
         {
         }
 
+        public DbSet<LibraryUser> LibraryUsers { get; set; }
         public DbSet<Asset> Assets { get; set; }
         public DbSet<Checkout> Checkouts { get; set; }
         public DbSet<AssetType> AssetTypes { get; set; }
