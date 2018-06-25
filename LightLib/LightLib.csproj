@@ -246,17 +246,9 @@
     <Compile Include="Migrations\201806241516170_removedSomeProperties.Designer.cs">
       <DependentUpon>201806241516170_removedSomeProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806251111458_AddLibraryUserClass.cs" />
-    <Compile Include="Migrations\201806251111458_AddLibraryUserClass.Designer.cs">
-      <DependentUpon>201806251111458_AddLibraryUserClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806251116438_PopulateLibraryUsers.cs" />
-    <Compile Include="Migrations\201806251116438_PopulateLibraryUsers.Designer.cs">
-      <DependentUpon>201806251116438_PopulateLibraryUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806251119102_PopulateLibraryUsers2.cs" />
-    <Compile Include="Migrations\201806251119102_PopulateLibraryUsers2.Designer.cs">
-      <DependentUpon>201806251119102_PopulateLibraryUsers2.cs</DependentUpon>
+    <Compile Include="Migrations\201806251624101_Removed.cs" />
+    <Compile Include="Migrations\201806251624101_Removed.Designer.cs">
+      <DependentUpon>201806251624101_Removed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -412,14 +404,8 @@
     <EmbeddedResource Include="Migrations\201806241516170_removedSomeProperties.resx">
       <DependentUpon>201806241516170_removedSomeProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806251111458_AddLibraryUserClass.resx">
-      <DependentUpon>201806251111458_AddLibraryUserClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806251116438_PopulateLibraryUsers.resx">
-      <DependentUpon>201806251116438_PopulateLibraryUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806251119102_PopulateLibraryUsers2.resx">
-      <DependentUpon>201806251119102_PopulateLibraryUsers2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806251624101_Removed.resx">
+      <DependentUpon>201806251624101_Removed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

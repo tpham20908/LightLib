@@ -7,13 +7,13 @@ namespace LightLib.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateLibraryUsers2 : IMigrationMetadata
+    public sealed partial class Removed : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateLibraryUsers2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Removed));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806251119102_PopulateLibraryUsers2"; }
+            get { return "201806251624101_Removed"; }
         }
         
         string IMigrationMetadata.Source
