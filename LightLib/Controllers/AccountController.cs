@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using LightLib.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace LightLib.Controllers
 {
@@ -80,6 +81,8 @@ namespace LightLib.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    List<int> loi = new List<int>();
+                    Session["Checkouts"] = loi;
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

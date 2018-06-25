@@ -17,5 +17,13 @@ namespace LightLib
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        private void Session_Start(object sender, EventArgs e)
+        {
+            List<int> chechouts = new List<int>();
+            
+            Session["Checkouts"] = chechouts;
+        }
     }
+    
 }

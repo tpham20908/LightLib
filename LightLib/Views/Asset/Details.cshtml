@@ -27,7 +27,8 @@
      <p>Author: @Model.Author</p>
      <p>Released year: @Model.ReleasedYear</p>
      <div>
-         @using (Html.BeginForm())
+         @Html.ActionLink("Add to checkout", "Index", "Asset", new {rentId = Model.Id}, new { @class= "btn btn-primary" })
+         @*@using (Html.BeginForm())
          {
              @Html.AntiForgeryToken()
              <div class="form-group">
@@ -35,7 +36,7 @@
                      <input type="submit" value="Add to checkout" class="btn btn-primary" />
                  </div>
              </div>
-          }
+          }*@
      </div>
 </div>
 <br /><br />
