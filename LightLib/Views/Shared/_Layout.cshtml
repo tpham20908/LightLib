@@ -10,7 +10,17 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <style>
+        .asset-item {
+            display:inline-block; width: 350px;text-align:center; border: 1px solid lightgray; margin:5px; padding:2px;
+        }
+        .asset-item:hover {
+            border: 3px solid green;
+            border-radius:5px;  
+            padding:0;
+            background:rgb(247, 251, 247);
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
