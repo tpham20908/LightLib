@@ -198,7 +198,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\AssetController.cs" />
-    <Compile Include="Controllers\AssetsController.cs" />
     <Compile Include="Controllers\AssetTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryUsersController.cs" />
@@ -342,7 +341,7 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-	<Content Include="Views\Shared\_Checkout.cshtml" />
+    <Content Include="Views\Shared\_Checkout.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AssetTypes\Create.cshtml" />
@@ -350,17 +349,6 @@
     <Content Include="Views\AssetTypes\Details.cshtml" />
     <Content Include="Views\AssetTypes\Edit.cshtml" />
     <Content Include="Views\AssetTypes\Index.cshtml" />
-    <Content Include="Views\Assets\Create.cshtml" />
-    <Content Include="Views\Assets\Delete.cshtml" />
-    <Content Include="Views\Assets\Details.cshtml" />
-    <Content Include="Views\Assets\Edit.cshtml" />
-    <Content Include="Views\Assets\Index.cshtml" />
-    <Content Include="Views\Assets\Book.cshtml" />
-    <Content Include="Views\Assets\Magazine.cshtml" />
-    <Content Include="Views\Assets\Movie.cshtml" />
-    <Content Include="Views\Assets\Documentation.cshtml" />
-    <Content Include="Views\Assets\Game.cshtml" />
-    <Content Include="Views\Assets\Music.cshtml" />
     <Content Include="Views\ApplicationUsers\Create.cshtml" />
     <Content Include="Views\ApplicationUsers\Delete.cshtml" />
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
