@@ -1,0 +1,55 @@
+﻿@model List<LightLib.Models.Asset>
+
+@{
+    ViewBag.Title = "Checkouts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Checkouts</h2>
+
+@if (Model.Count == 0)
+{
+    <h3>You have not selected items to rent</h3>
+    <br /><br />
+    <hr />
+    <p> @Html.ActionLink("<< Go to previous page", null, null, null, new { href = Request.UrlReferrer })</p>
+}
+else
+{
+    <div style="width:500px">
+        <table class="table">
+            <tr>
+                <th>
+                    Asset to rent
+                </th>
+                <th>
+
+                </th>
+
+            </tr>
+            @foreach (var a in Model)
+            {
+            <tr>
+                <td>
+                    @a.Title <br />@a.Author<br />@a.ReleasedYear
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "Checkouts", "Home", new { removeId = a.Id }, new { @class = "btn btn-info" })
+                </td>
+             </tr>
+             }
+
+
+        </table>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Rent selected assets" class="btn btn-primary" />
+                </div>
+            </div>
+         }
+    </div>
+}
+
