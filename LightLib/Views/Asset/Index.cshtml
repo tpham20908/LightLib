@@ -8,6 +8,7 @@
 <p>
     @Html.ActionLink("Home", "Index", "Home") >
     @Html.ActionLink("Assets", "Index", "Asset") 
+    @if (ViewBag.Myheader != "Assets") {<span>&nbsp;>&nbsp;</span> @ViewBag.Myheader }
 </p>
 <hr />
 
@@ -50,9 +51,18 @@
                     </div>
                 </div>
             </a>
-            <div class="form-group">
-                @Html.ActionLink("Add to checkout", "Index", "Asset", new { rentId = a.Id, assetTypeid=Request.QueryString["assetTypeid"] }, new { @class = "btn btn-primary" })
-            </div>
+            @if (a.User.IsEmpty())
+            {
+                <div class="form-group">
+                    @Html.ActionLink("Add to checkout", "Index", "Asset", new { rentId = a.Id, assetTypeid = Request.QueryString["assetTypeid"] }, new { @class = "btn btn-primary" })
+                </div>
+            }
+            else
+            {
+                <p class="text-info">Available from <b>@a.RentDate.AddDays(15).ToShortDateString()</b></p>
+            }
+
+
             @*@using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

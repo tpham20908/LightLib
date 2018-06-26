@@ -27,7 +27,16 @@
      <p>Author: @Model.Author</p>
      <p>Released year: @Model.ReleasedYear</p>
      <div>
-         @Html.ActionLink("Add to checkout", "Index", "Asset", new {rentId = Model.Id}, new { @class= "btn btn-primary" })
+          @if (Model.User.IsEmpty())
+            {
+                <div class="form-group">
+                    @Html.ActionLink("Add to checkout", "Index", "Asset", new { rentId = Model.Id, assetTypeid = Model.Type.Id }, new { @class = "btn btn-primary" })
+                </div>
+            }
+            else
+            {
+                <p class="text-info">Available from <b>@Model.RentDate.AddDays(15).ToShortDateString()</b></p>
+            }
          @*@using (Html.BeginForm())
          {
              @Html.AntiForgeryToken()

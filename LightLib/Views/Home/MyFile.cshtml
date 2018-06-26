@@ -1,0 +1,61 @@
+﻿@model List<LightLib.Models.Asset>
+
+@{
+    ViewBag.Title = "MyFile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyFile</h2>
+
+@if (Model.Count == 0)
+{
+    <h3>You do not have items to return</h3>
+    <br /><br />
+    <hr />
+    <p> @Html.ActionLink("<< Go to previous page", null, null, null, new { href = Request.UrlReferrer })</p>
+}
+else
+{
+    <div style="width:500px">
+        <table class="table">
+            <tr>
+                <th>Assets to return</th>
+                <th>Due date</th>
+                <th></th>
+            </tr>
+            @foreach (var a in Model)
+            {
+                <tr>
+                    <td>
+                        @a.Title <br />@a.Author<br />@a.ReleasedYear
+                    </td>
+                    <td>
+                        @if (a.RentDate.AddDays(15) <= DateTime.Now)
+                        {
+                            <span class="text-danger"><b>@a.RentDate.AddDays(15).ToShortDateString()</b></span>
+                        }
+                        else
+                        {
+                            <span>@a.RentDate.AddDays(15).ToShortDateString()</span>
+                        }
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Return", "MyFile", "Home", new { returnId = a.Id }, new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Return all items" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+    </div>
+}

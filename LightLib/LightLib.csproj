@@ -269,6 +269,18 @@
     <Compile Include="Migrations\201806251519586_FKCheckoutAndLibraryUser.Designer.cs">
       <DependentUpon>201806251519586_FKCheckoutAndLibraryUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806260333109_addedUserIdAndDateToASSET.cs" />
+    <Compile Include="Migrations\201806260333109_addedUserIdAndDateToASSET.Designer.cs">
+      <DependentUpon>201806260333109_addedUserIdAndDateToASSET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806260335089_addedUserIdAndDateToASSET1.cs" />
+    <Compile Include="Migrations\201806260335089_addedUserIdAndDateToASSET1.Designer.cs">
+      <DependentUpon>201806260335089_addedUserIdAndDateToASSET1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806260400314_addedUserIdAndDateToASSET3.cs" />
+    <Compile Include="Migrations\201806260400314_addedUserIdAndDateToASSET3.Designer.cs">
+      <DependentUpon>201806260400314_addedUserIdAndDateToASSET3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Asset.cs" />
@@ -320,7 +332,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-	<Content Include="Views\Shared\_Checkout.cshtml" />
+    <Content Include="Views\Shared\_Checkout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -342,7 +354,6 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\_Checkout.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AssetTypes\Create.cshtml" />
@@ -369,7 +380,8 @@
     <Content Include="Views\LibraryUsers\Index.cshtml" />
     <Content Include="Views\LibraryUsers\Rent.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-	<Content Include="Views\Home\Checkouts.cshtml" />
+    <Content Include="Views\Home\Checkouts.cshtml" />
+    <Content Include="Views\Home\MyFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -435,6 +447,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251519586_FKCheckoutAndLibraryUser.resx">
       <DependentUpon>201806251519586_FKCheckoutAndLibraryUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260333109_addedUserIdAndDateToASSET.resx">
+      <DependentUpon>201806260333109_addedUserIdAndDateToASSET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260335089_addedUserIdAndDateToASSET1.resx">
+      <DependentUpon>201806260335089_addedUserIdAndDateToASSET1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260400314_addedUserIdAndDateToASSET3.resx">
+      <DependentUpon>201806260400314_addedUserIdAndDateToASSET3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

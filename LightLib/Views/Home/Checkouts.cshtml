@@ -1,15 +1,15 @@
 ﻿@model List<LightLib.Models.Asset>
 
 @{
-    ViewBag.Title = "Checkouts";
+    ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Checkouts</h2>
+<h2>Checkout</h2>
 
 @if (Model.Count == 0)
 {
-    <h3>You have not selected items to rent</h3>
+    <h3>You have no selected items to rent</h3>
     <br /><br />
     <hr />
     <p> @Html.ActionLink("<< Go to previous page", null, null, null, new { href = Request.UrlReferrer })</p>
