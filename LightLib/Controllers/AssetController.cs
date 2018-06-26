@@ -15,8 +15,24 @@ namespace LightLib.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Asset
-        public ActionResult Index(int? assetTypeid)
+        public ActionResult Index(int? assetTypeid, int? rentId)
         {
+            if (rentId != null)
+            {
+                if (!User.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+
+                List<int> checkouts = (List<int>)Session["Checkouts"];
+
+                //check whether Id is already added to checkout List and add if not
+                int id = (int)rentId;
+                if (checkouts.IndexOf(id) == -1)
+                    checkouts.Add(id);
+                Session["Ckeckouts"] = checkouts;
+            }
+
             if (assetTypeid == null)
             {
                 ViewBag.Myheader = "Assets";
