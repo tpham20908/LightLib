@@ -71,7 +71,6 @@ namespace LightLib.Controllers
                 .Add(new Checkout { Assets = assets });
 
             return View("Details");
-
         }
 
         // GET: LibraryUsers/Create

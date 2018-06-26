@@ -6,13 +6,11 @@
 <h2>@ViewBag.Title</h2>
 
 <div class="jumbotron">
-    <h5>Assets available</h5>
+    <h3>Search Assets</h3>
     @using (@Html.BeginForm("Rent", "LibraryUsers", FormMethod.Get))
     {
-        <div class="col-md-3">
-            @Html.TextBox("Search")
-        </div>
-        <input type="submit" value="Search" />
+        @Html.TextBox("Search")
+        <input type="submit" value="Search" class="btn btn-default" />
     }
 </div>
 
@@ -50,7 +48,7 @@
                 @*@Html.DisplayFor(modelItem => item.ImageUrl)*@
             </td>
             <td>
-                @Html.ActionLink("Rent", "RentProcess", new { userId = Model.User.Id, assetId = item.Id }, new { @class="btn btn-success"})
+                @Html.ActionLink("Rent", "RentProcess", new { userId = Model.User.Id, assetId = item.Id }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }

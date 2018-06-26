@@ -1,9 +1,10 @@
 ﻿a img {
     transition: transform .4s ease-out;
 }
-a img:hover {
-    transform: scale(1.05);
-}
+
+    a img:hover {
+        transform: scale(1.05);
+    }
 
 .imgAssetIndex {
     height: 78px;
