@@ -310,6 +310,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\lightlib - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\lightlib - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -367,9 +369,7 @@
     <Content Include="Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Views\ApplicationUsers\Index.cshtml" />
     <Content Include="Views\Asset\Create.cshtml" />
-    <Content Include="Views\Asset\Delete.cshtml" />
     <Content Include="Views\Asset\Details.cshtml" />
-    <Content Include="Views\Asset\Edit.cshtml" />
     <Content Include="Views\Asset\Index.cshtml" />
     <Content Include="Views\Asset\IndexList.cshtml" />
     <Content Include="Views\Asset\DetailsList.cshtml" />
