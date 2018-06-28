@@ -200,7 +200,6 @@
     <Compile Include="Controllers\AssetController.cs" />
     <Compile Include="Controllers\AssetTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LibraryUsersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -281,17 +280,22 @@
     <Compile Include="Migrations\201806260400314_addedUserIdAndDateToASSET3.Designer.cs">
       <DependentUpon>201806260400314_addedUserIdAndDateToASSET3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806280509151_dropLibraryUser.cs" />
+    <Compile Include="Migrations\201806280509151_dropLibraryUser.Designer.cs">
+      <DependentUpon>201806280509151_dropLibraryUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280511534_dropCheckout.cs" />
+    <Compile Include="Migrations\201806280511534_dropCheckout.Designer.cs">
+      <DependentUpon>201806280511534_dropCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\AssetType.cs" />
-    <Compile Include="Models\Checkout.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LibraryUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\UserCheckoutsAssets.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -373,12 +377,6 @@
     <Content Include="Views\Asset\Index.cshtml" />
     <Content Include="Views\Asset\IndexList.cshtml" />
     <Content Include="Views\Asset\DetailsList.cshtml" />
-    <Content Include="Views\LibraryUsers\Create.cshtml" />
-    <Content Include="Views\LibraryUsers\Delete.cshtml" />
-    <Content Include="Views\LibraryUsers\Details.cshtml" />
-    <Content Include="Views\LibraryUsers\Edit.cshtml" />
-    <Content Include="Views\LibraryUsers\Index.cshtml" />
-    <Content Include="Views\LibraryUsers\Rent.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Home\Checkouts.cshtml" />
     <Content Include="Views\Home\MyFile.cshtml" />
@@ -386,6 +384,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -457,6 +456,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806260400314_addedUserIdAndDateToASSET3.resx">
       <DependentUpon>201806260400314_addedUserIdAndDateToASSET3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280509151_dropLibraryUser.resx">
+      <DependentUpon>201806280509151_dropLibraryUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280511534_dropCheckout.resx">
+      <DependentUpon>201806280511534_dropCheckout.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

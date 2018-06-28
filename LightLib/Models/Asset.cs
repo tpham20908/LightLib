@@ -16,6 +16,5 @@ namespace LightLib.Models
         public string ImageUrl { get; set; }
         public string User { get; set; }  
         public DateTime RentDate { get; set; }
-        public Checkout Checkout { get; set; }
     }
 }
