@@ -41,15 +41,26 @@ else
 
 
         </table>
-        @using (Html.BeginForm())
+       
+        @if((Model.Count + (int)ViewBag.RentedNumber) > 5)
         {
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                <div>
-                    <input type="submit" value="Rent selected assets" class="btn btn-primary" />
+            <h4 style="line-height:30px;"><span class="text-danger"><b>Maximum of rented assets may be exceeded!</b></span><br />
+                You have already rented @ViewBag.RentedNumber asset(s)<br />
+            <span class="text-info">(maximum of not returned assets is five per user)</span></h4>
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Rent selected assets" class="btn btn-primary" />
+                    </div>
                 </div>
-            </div>
-         }
+             }
+        }
+        
     </div>
 }
 

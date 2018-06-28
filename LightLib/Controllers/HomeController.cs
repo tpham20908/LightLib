@@ -13,7 +13,12 @@ namespace LightLib.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole("admin"))
+            {
+                return View("IndexAdmin");
+            }
+            var assets = db.Assets.OrderByDescending(a => a.Type.Id).Take(6);
+            return View(assets.ToList());
         }
 
         public ActionResult About()
@@ -38,14 +43,15 @@ namespace LightLib.Controllers
             {
                 IdList.Remove((int)removeId);
                 Session["Checkouts"] = IdList;
-                var selectedAssets = db.Assets.Where(a => IdList.Contains(a.Id));
-                return View(selectedAssets.ToList());
+                
             }
-            else // show all the items
-            {
-                var selectedAssets = db.Assets.Where(a => IdList.Contains(a.Id));
-                return View(selectedAssets.ToList());
-            }
+            //find items already rented
+            string userName = System.Web.HttpContext.Current.User.Identity.Name;
+            int rentedNumber = db.Assets.Where(a => a.User == userName).Count();
+            ViewBag.RentedNumber = rentedNumber;
+            
+            var selectedAssets = db.Assets.Where(a => IdList.Contains(a.Id));
+            return View(selectedAssets.ToList());
         }
 
         //Saving action into DB

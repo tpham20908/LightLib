@@ -16,23 +16,42 @@
 }
 else
 {
-    <div style="width:500px">
+    <div style="width:650px">
         <table class="table">
             <tr>
                 <th>Assets to return</th>
                 <th>Due date</th>
                 <th></th>
             </tr>
+            @{
+                //Initilize Total fee
+                double totalFee = 0;
+                double fee = 0;
+            }
             @foreach (var a in Model)
             {
+                {
+                    TimeSpan difference = DateTime.Now - a.RentDate.AddDays(15);
+                    if (difference.Days > 0)
+                    {
+                        fee = difference.Days * 1.50;
+                        totalFee += fee;
+                    }
+                    else
+                    {
+                        fee = 0;
+                    }
+                }
+
                 <tr>
                     <td>
                         @a.Title <br />@a.Author<br />@a.ReleasedYear
                     </td>
                     <td>
-                        @if (a.RentDate.AddDays(15) <= DateTime.Now)
+                        @if (a.RentDate.AddDays(15) < DateTime.Now)
                         {
-                            <span class="text-danger"><b>@a.RentDate.AddDays(15).ToShortDateString()</b></span>
+                            <span class="text-danger"><b>@a.RentDate.AddDays(15).ToShortDateString()</b><br />
+                            Calculated fee: $@fee.ToString(".00")</span>
                         }
                         else
                         {
@@ -45,9 +64,11 @@ else
                     </td>
                 </tr>
             }
-
-
         </table>
+        @if (totalFee > 0)
+        {
+            <h4 class="text-danger">Your total fee is: $@totalFee.ToString(".00") </h4>
+        }
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

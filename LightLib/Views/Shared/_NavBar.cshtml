@@ -12,17 +12,22 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Assets", "Index", "Asset")</li>
-                <li>@Html.ActionLink("My file", "MyFile", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
+                @*Not Admin part*@
+                
+                @if (!this.User.IsInRole("admin"))
+                {
+                    <li>@Html.ActionLink("My file", "MyFile", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                }
                 @*Admin part*@
                 @if (this.User.IsInRole("admin"))
                 {
                     <li>@Html.ActionLink("Users", "Index", "ApplicationUsers")</li>
-                    <li>@Html.ActionLink("New User", "Create", "ApplicationUsers")</li>
+                    <li>@Html.ActionLink("New User", "Create", "Account")</li>
                     <li>@Html.ActionLink("New Asset", "Create", "Asset")</li>
                 }
-                
+
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

@@ -10,6 +10,7 @@ using LightLib.Models;
 
 namespace LightLib.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ApplicationUsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -81,9 +81,11 @@ namespace LightLib.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    //set checkouts to 0 
                     List<int> loi = new List<int>();
                     Session["Checkouts"] = loi;
-                    return RedirectToLocal(returnUrl);
+
+                   return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -185,6 +187,53 @@ namespace LightLib.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        //
+        // GET: /Account/Register
+        [Authorize(Roles = "admin")]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Register
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create (RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Phone = model.Phone,
+                    Address = model.Address,
+                    City = model.City,
+                    Province = model.Province,
+                    Zip = model.Zip
+                };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("admin"));
+                    //await UserManager.AddToRoleAsync(user.Id, "admin");
+
+                    return RedirectToAction("Index", "ApplicationUsers");
                 }
                 AddErrors(result);
             }
