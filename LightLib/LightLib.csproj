@@ -307,6 +307,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\i1.jpg" />
+    <Content Include="images\i2.jpg" />
+    <Content Include="images\i3.jpg" />
+    <Content Include="images\i4.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\logo_nyI_icon.ico" />
     <Content Include="Scripts\bootstrap.js" />
