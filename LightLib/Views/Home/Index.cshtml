@@ -68,46 +68,48 @@
     </div>
 </div>
 
-<div style="text-align:center">
-    <div style="margin:0 auto">
-        <h3 style="text-align:left; margin-left:50px;">Last entries</h3>
+<div class="jumbotron">
+    <div style="text-align:left">
+        <div style="margin:0 auto;">
+            <h3 style="text-align:left;">Last entries</h3>
 
-        <div style="display:inline-block; margin:0 auto ">
-            @foreach (var a in Model)
-            {
+            <div style="display:inline-block; margin:0 auto ">
+                @foreach (var a in Model)
+                {
 
-                <div class="asset-item">
-                    <a href="~/Asset/Details/@a.Id">
-                        <div>
-                            <div style="text-align:center">
-                                <h4>
-                                    @if (a.Title.Length <= 34)
-                                    {
-                                        @a.Title
-                                    }
-                                    else
-                                    {
-                                        @a.Title.Substring(0, 34)<span>...</span>
-                                    }
-                                </h4>
+                    <div class="asset-item" style="width:325px;  height:360px">
+                        <a href="~/Asset/Details/@a.Id">
+                            <div>
+                                <div style="text-align:center">
+                                    <p style="font-size:medium">
+                                        @if (a.Title.Length <= 34)
+                                        {
+                                            @a.Title
+                                        }
+                                        else
+                                        {
+                                            @a.Title.Substring(0, 34)<span>...</span>
+                                        }
+                                    </p>
+                                </div>
+                                <div style="text-align:center">
+                                    <img src=@a.ImageUrl style="height:230px;" title="@a.Title" alt="@a.Title" /><br /><br />
+                                </div>
                             </div>
-                            <div style="text-align:center">
-                                <img src=@a.ImageUrl style="height:230px;" title="@a.Title" alt="@a.Title" /><br /><br />
+                        </a>
+                        @if (a.User.IsEmpty())
+                        {
+                            <div class="form-group">
+                                @Html.ActionLink("Add to checkout", "Index", "Asset", new { rentId = a.Id, assetTypeid = Request.QueryString["assetTypeid"] }, new { @class = "btn btn-primary" })
                             </div>
-                        </div>
-                    </a>
-                    @if (a.User.IsEmpty())
-                    {
-                        <div class="form-group">
-                            @Html.ActionLink("Add to checkout", "Index", "Asset", new { rentId = a.Id, assetTypeid = Request.QueryString["assetTypeid"] }, new { @class = "btn btn-primary" })
-                        </div>
-                    }
-                    else
-                    {
-                        <p class="text-info">Available from <b>@a.RentDate.AddDays(15).ToShortDateString()</b></p>
-                    }
-                </div>
-            }
+                        }
+                        else
+                        {
+                            <p class="text-info">Available from <b>@a.RentDate.AddDays(15).ToShortDateString()</b></p>
+                        }
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>
